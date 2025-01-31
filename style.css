@@ -1,0 +1,473 @@
+*{
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body{
+    background-color: #f1e8b0;
+    color: #330000;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header{
+    background-color: #ccaa66;
+    text-align: center;
+    padding: 10px 0;
+    border: 3px solid #330000;
+}
+
+h1{
+    margin: 0;
+    color: #330000;
+}
+
+.container{
+    width: 100%;
+    flex: 1;
+}
+
+nav{
+    background-color: #E8D882;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    float: left;
+    border-left: 3px solid #330000;
+    border-right: 3px solid #330000;
+    height: 90vh;
+    width: 150px;
+    flex-direction: column;
+}
+
+nav a{
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+}
+
+nav a:hover{
+    font-weight: bold;
+}
+
+.content{
+    background-color: #f1e8b0;
+    padding: 18px;
+    margin-left: auto;
+    overflow: auto;
+    border-right: 3px solid #330000;
+    height: 90vh;
+    display: none;
+    flex: 1;
+}
+
+.content:target{
+    display: block;
+}
+
+.coffeePic img{
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    height: auto;
+    right: 30px;
+    bottom: 75px;
+}
+
+ul{
+    list-style-type: disc;
+    padding-left: 50px;
+}
+
+/* Menu Section Styles */
+#menu{
+    padding-bottom: 70px;
+}
+
+.menu-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.menu-card{
+    width: 100%;
+    height: 190px; 
+    perspective: 1000px;
+}
+
+.menu-front, .menu-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s;
+}
+
+.menu-front img{
+    width: 80%;
+    height: 85%;
+    object-fit: cover;
+}
+
+.menu-back{
+    background-color: #ccaa66;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.8em; 
+    border: 2px solid #330000;
+}
+
+.menu-card:hover .menu-front{
+    transform: rotateY(180deg);
+}
+
+.menu-card:hover .menu-back{
+    transform: rotateY(360deg);
+}
+
+/* Event Section Styles */
+#music{
+    padding-bottom: 90px;
+}
+
+.three-col{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+  
+.event{
+    text-align: center;
+    width: 30%;
+}
+  
+.event-image{
+    width: 80%;
+    height: auto;
+    border: 2px solid #330000;
+}
+
+/* Job Section Styles */
+#jobs{
+    padding-bottom: 80px;
+}
+
+.job-columns{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.job-columns .event{
+    text-align: center;
+}
+
+.barista, .server, .cashier{
+    border: 2px solid #330000;
+    width: 80%;
+    object-fit: cover;
+    height: 180px;
+}
+
+.apply-button{
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: #330000;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.apply-button:hover{
+    font-weight: bold;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ccaa66;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid #330000;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+footer a{
+    color: #800080;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) { /* Small screens (Mobile devices) */
+    html, body{
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 3px solid #330000;
+        height: 60px;
+    }
+
+    h1{
+        font-size: 24px; /* Adjust this value as needed */
+        line-height: 1.2;
+        text-align: center; /* Optional, adjust text alignment */
+        margin: 10px 0;
+    }
+    
+    nav{
+        position: sticky;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        height: auto;
+        padding: 10px;
+        flex-direction: row;
+        gap: 20px;
+        border-bottom: 3px solid #330000;
+    }
+
+    .content{
+        margin-left: 0;
+        padding: 10px;
+        border-left: 3px solid #330000;;
+    }
+
+    #home, #menu, #music{
+        padding-top: 70px;
+    }
+
+    .coffeePic img{
+        position: absolute;
+        right: 10px;
+        bottom: 40px;
+        width: 40%;
+        max-width: auto;
+        max-height: auto;
+        margin: 20px auto;
+    }
+
+    .menu-container{
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .menu-card{
+        width: 80%;
+        height: 190px; 
+        perspective: 1000px;
+    }
+
+    .menu-front img{
+        width: 100%;
+        height: 65%;
+        object-fit: cover;
+    }
+
+    .three-col{
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .job-columns{
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .barista, .server, .cashier{
+        width: 100%;
+        height: 200px;
+    }
+
+    .apply-button{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { /* Medium screens (Tablets) */
+    html, body{
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 3px solid #330000;
+        height: 60px;
+    }
+    
+    nav{
+        position: sticky;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        height: auto;
+        padding: 10px;
+        flex-direction: row;
+        gap: 20px;
+        border-bottom: 3px solid #330000;
+    }
+
+    #home, #menu{
+        padding-top: 70px;
+    }
+    
+    .content{
+        height: auto;
+        padding: 15px;
+        border-left: 3px solid #330000;
+        min-height: calc(100vh - 50px);
+    }
+
+    .menu-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .coffeePic img{
+        position: absolute;
+        right: 25px;
+        bottom: 70px;
+        max-width: 200px;
+        margin: 20px auto;
+    }
+
+    .menu-front img{
+        width: 70%;
+        height: 50%;
+        object-fit: cover;
+    }    
+
+    .three-col{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    #jobs{
+        padding-bottom: 0;
+    }
+
+    .job-columns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .barista, .server, .cashier{
+        width: 100%;
+        height: 150px;
+    }
+
+    footer{
+        font-size: 0.8em;
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) { /* Large screens (Laptops/Desktops) */
+    nav{
+        width: 150px;
+    }
+
+    .content{
+        margin-left: 260px;
+        padding: 20px;
+    }
+
+    .menu-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-front img{
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+    }    
+
+    .three-col{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .job-columns{
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .apply-button{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1280px) { /* Extra large screens (Wide desktops) */
+    nav{
+        width: 250px;
+    }
+
+    .content{
+        margin-left: 310px;
+        padding: 30px;
+    }
+
+    .menu-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .menu-front img{
+        width: 60%;
+        height: auto;
+        object-fit: cover;
+    }   
+
+    .three-col{
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .job-columns{
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .apply-button{
+        width: 50%;
+    }
+}
