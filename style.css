@@ -53,6 +53,7 @@ nav a{
 
 nav a:hover{
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .content{
@@ -138,7 +139,7 @@ ul{
 
 /* Event Section Styles */
 #music{
-    padding-bottom: 90px;
+    padding-bottom: 55px;
 }
 
 .three-col{
@@ -218,7 +219,8 @@ footer a{
 }
 
 /* Responsive Design */
-@media screen and (max-width: 480px) { /* Small screens (Mobile devices) */
+/* Small screens (Mobile devices) */
+@media screen and (max-width: 480px) { 
     html, body{
         height: 100%;
         overflow-x: hidden;
@@ -238,9 +240,9 @@ footer a{
     }
 
     h1{
-        font-size: 24px; /* Adjust this value as needed */
+        font-size: 24px; 
         line-height: 1.2;
-        text-align: center; /* Optional, adjust text alignment */
+        text-align: center; 
         margin: 10px 0;
     }
     
@@ -313,7 +315,8 @@ footer a{
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) { /* Medium screens (Tablets) */
+/* Medium screens (Tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) { 
     html, body{
         height: 100%;
         overflow-x: hidden;
@@ -345,7 +348,7 @@ footer a{
         border-bottom: 3px solid #330000;
     }
 
-    #home, #menu{
+    #home, #menu, #music, #jobs{
         padding-top: 70px;
     }
     
@@ -370,7 +373,7 @@ footer a{
 
     .menu-front img{
         width: 70%;
-        height: 50%;
+        height: auto;
         object-fit: cover;
     }    
 
@@ -402,13 +405,14 @@ footer a{
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1279px) { /* Large screens (Laptops/Desktops) */
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width: 769px) and (max-width: 1279px) { 
     nav{
         width: 150px;
     }
 
     .content{
-        margin-left: 260px;
+        margin-left: 155px;
         padding: 20px;
     }
 
@@ -417,7 +421,7 @@ footer a{
     }
 
     .menu-front img{
-        width: 50%;
+        width: 40%;
         height: auto;
         object-fit: cover;
     }    
@@ -437,17 +441,66 @@ footer a{
     }
 }
 
-@media screen and (min-width: 1280px) { /* Extra large screens (Wide desktops) */
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .coffeePic img{
+        position: absolute;
+        right: 10px;
+        bottom: 40px;
+        width: 50%;
+        max-width: auto;
+        margin: 20px auto;
+    }
+
+    .menu-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .menu-card{
+        width: 80%;
+        height: 190px; 
+        perspective: 1000px;
+    }
+
+    .menu-front img {
+        width: 50%;  
+        height: auto;  
+        object-fit: cover;
+    }    
+
+    .three-col{
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .job-columns{
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .barista, .server, .cashier{
+        width: 100%;
+        height: 200px;
+    }
+
+    .apply-button{
+        width: 80%;
+    }
+}
+
+/* Extra large screens (Wide desktops) */
+@media screen and (min-width: 1280px) { 
     nav{
         width: 250px;
     }
 
     .content{
-        margin-left: 310px;
+        margin-left: 270px; 
         padding: 30px;
     }
 
     .menu-container{
+        margin-top: 50px; 
         grid-template-columns: repeat(3, 1fr);
     }
 
